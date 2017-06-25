@@ -1,13 +1,12 @@
 <view class="head">
-  <span class="icon-back head-icon"></span> 
-  <span class="user-head margin-center">用户中心</span> 
-  <span class="head-icon icon-delete"></span> 
-  <span class="icon-check head-icon"></span> 
+  <view class="{{icon_back}} icon-back head-icon" bindtap="show_container"></view>
+  <view class="user-head margin-center">{{user_head}}</view>
+  <view class="{{icon_check}} head-icon"></view>
 </view>
-<view class="content">
+<scroll-view scroll-y="true" class="content {{container}}">
   <view class="user">
     <view class="user-info">
-      <img class="photo" src="../../static/img/timg.jpg" />
+      <image class="photo" src="../../dist/img/timg.jpg"></image>
       <view class="user-text">
         <view id="username">我有故事谁有酒？</view>
         <view id="score">信用度：1000</view>
@@ -30,27 +29,71 @@
   </view>
   <view class="menu">
     <view class="menu-list">
-      <view id="history">借阅历史</view>
-      <span class="fa fa-angle-right"></span> 
+      <view id="history" bindtap="show_history">借阅历史</view>
+      <view class="fa fa-angle-right"></view>
     </view>
     <view class="menu-list">
-      <view id="turn-back">借阅归还</view>
-      <span class="fa fa-angle-right"></span> 
+      <view id="turn-back" bindtap="show_back">借阅归还</view>
+      <view class="fa fa-angle-right"></view>
     </view>
     <view class="menu-list">
-      <view id="reservation">我的预约</view>
-      <span class="fa fa-angle-right"></span> 
+      <view id="reservation" bindtap="show_reservation">我的预约</view>
+      <view class="fa fa-angle-right"></view>
     </view>
+    <view class="menu-list">
+      <view id="my_advice" bindtap="show_me">我的评价</view>
+      <view class="fa fa-angle-right"></view>
+    </view>
+</contact-button>
     <view class="menu-list">
       <view id="advice">意见反馈</view>
-      <span class="fa fa-angle-right"></span> 
+      <view class="fa fa-angle-right"></view>
     </view>
   </view>
-</view>
-<view class="history">
+</scroll-view>
+<scroll-view scroll-y="true" class="my_advice {{my_advice}}">
   <view class="list-info">
     <view class="photo-info">
-      <img class="book-photo" src="../../static/img/timg.jpg" />
+      <image class="photo" src="../../dist/img/timg.jpg"></image>
+      <view>
+        <view class="book-name">疯狂java讲义</view>
+        <view class="book-status">好书好书好书好书好书</view>
+      </view>
+    </view>
+    <view class="book-extra">
+      <view class="advice-btn" bindtap="show_advice">查看全部</view>
+    </view>
+  </view>
+  <view class="list-info">
+    <view class="photo-info">
+      <image class="photo" src="../../dist/img/timg.jpg"></image>
+      <view>
+        <view class="book-name">疯狂java讲义</view>
+        <view class="book-status">好书好书好书好书好书</view>
+      </view>
+    </view>
+    <view class="book-extra">
+      <view class="advice-btn">查看全部</view>
+    </view>
+  </view>
+</scroll-view>
+<scroll-view scroll-y="true" class="history {{history}}">
+  <view class="list-info">
+    <view class="photo-info">
+      <image class="photo" src="../../dist/img/timg.jpg"></image>
+      <view>
+        <view class="book-name">疯狂java讲义</view>
+        <view class="book-time">2017-04-04 - 2017-03-05</view>
+        <view class="book-status">已归还</view>
+      </view>
+    </view>
+    <view class="book-extra">
+      <view class="advice-btn" bindtap="show_advice">评价</view>
+    </view>
+  </view>
+  <view class="list-info">
+    <view class="photo-info">
+      <image class="photo" src="../../dist/img/timg.jpg"></image>
       <view>
         <view class="book-name">疯狂java讲义</view>
         <view class="book-time">2017-04-04 - 2017-03-05</view>
@@ -61,24 +104,11 @@
       <view class="advice-btn">评价</view>
     </view>
   </view>
+</scroll-view>
+<scroll-view scroll-y="true" class="return-back {{return_back}}">
   <view class="list-info">
     <view class="photo-info">
-      <img class="book-photo" src="../../static/img/timg.jpg" />
-      <view>
-        <view class="book-name">疯狂java讲义</view>
-        <view class="book-time">2017-04-04 - 2017-03-05</view>
-        <view class="book-status">已归还</view>
-      </view>
-    </view>
-    <view class="book-extra">
-      <view class="advice-btn">评价</view>
-    </view>
-  </view>
-</view>
-<view class="return-back">
-  <view class="list-info">
-    <view class="photo-info">
-      <img class="book-photo" src="../../static/img/timg.jpg" />
+      <image class="photo" src="../../dist/img/timg.jpg"></image>
       <view>
         <view class="book-name">书名：疯狂java讲义</view>
         <view class="book-time">归还日期：2017-04-04</view>
@@ -88,11 +118,11 @@
       <view class="confirm-btn">确认</view>
     </view>
   </view>
-</view>
-<view class="reservation">
+</scroll-view>
+<scroll-view scroll-y="true" class="reservation {{reservation}}">
   <view class="list-info">
     <view class="photo-info">
-      <img class="book-photo" src="../../static/img/timg.jpg" />
+      <image class="photo" src="../../dist/img/timg.jpg"></image>
       <view>
         <view class="book-name">疯狂java讲义</view>
         <view class="book-status">作者：达科特</view>
@@ -104,11 +134,11 @@
       <view class="reservation-btn">取消预约</view>
     </view>
   </view>
-</view>
-<view class="advice">
+</scroll-view>
+<scroll-view scroll-y="true" class="advice {{advice}}">
   <view class="list-info">
     <view class="photo-info">
-      <img class="book-photo" src="../../static/img/timg.jpg" />
+      <image class="photo" src="../../dist/img/timg.jpg"></image>
       <view>
         <view class="book-name">疯狂java讲义</view>
         <view class="book-time">2017-04-04 - 2017-03-05</view>
@@ -116,16 +146,16 @@
     </view>
   </view>
   <view class="area-mark">
-    <span class="mark">评论</span> 
+    <view class="mark">评论</view>
     <textarea class="area">
     </textarea>
   </view>
-</view>
+</scroll-view>
 <view class="footer">
   <view class="footer-menu">
-    <a class="icon-contacts footer-icon" href="home.html"></a> 
-    <a class="icon-collections footer-icon" href="storage.html"></a> 
-    <a class="icon-person footer-icon" href="myself.html"></a> 
-    <a class="icon-settings footer-icon" href="settings.html"></a> 
+    <navigator class="icon-contacts footer-icon" url="../home/home"></navigator>
+    <navigator class="icon-collections footer-icon" url="../storage/storage"></navigator>
+    <view class="icon-person footer-icon"></view>
+    <navigator class="icon-settings footer-icon" url="../settings/settings"></navigator>
   </view>
 </view>

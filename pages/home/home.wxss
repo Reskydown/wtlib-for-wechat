@@ -115,7 +115,6 @@ input{
     padding:18rpx;
     width:70%
 }
-
 .book-description{
     height:217rpx;
     background-color:white;

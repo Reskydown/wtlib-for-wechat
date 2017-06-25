@@ -1,19 +1,67 @@
-// pages/myself/myself.js
 Page({
-  data:{},
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+  data: {
+    history: "disp-none",
+    container: "disp-flex",
+    icon_back: "disp-none",
+    advice: "disp-none",
+    reservation: "disp-none",
+    return_back: "disp-none",
+    icon_check: "disp-none",
+    user_head: "用户中心",
+    my_advice:"disp-none"
   },
-  onReady:function(){
-    // 页面渲染完成
+  show_container: function(){
+    this.setData({
+      history: "disp-none",
+      container: "disp-flex",
+      icon_back: "disp-none",
+      advice: "disp-none",
+      reservation: "disp-none",
+      return_back: "disp-none",
+      icon_check: "disp-none",
+      user_head: "用户中心",
+      my_advice: "disp-none"
+    })
   },
-  onShow:function(){
-    // 页面显示
+  show_history: function () {
+    this.setData({
+      history: "disp-flex",
+      container: "disp-none",
+      icon_back: "disp-block",
+      head: "借阅历史",
+    })
   },
-  onHide:function(){
-    // 页面隐藏
+  show_back:function () {
+    this.setData({
+      return_back: "disp-block",
+      container: "disp-none",
+      icon_back: "disp-block",
+      user_head: "借阅归还"
+    })
   },
-  onUnload:function(){
-    // 页面关闭
+  show_reservation: function () {
+    this.setData({
+      reservation: "disp-block",
+      container: "disp-none",
+      icon_back: "disp-block",
+      user_head: "我的预约"
+    })
+  },
+  show_advice: function () {
+    this.setData({
+      advice: "disp-block",
+      container: "disp-none",
+      history:"disp-none",
+      icon_back: "disp-block",
+      user_head: "评价界面"
+    })
+  },
+  show_me: function(){
+    this.setData({
+      my_advice: "disp-flex",
+      container: "disp-none",
+      icon_back: "disp-block",
+      user_head: "我的评价"
+    })
   }
 })

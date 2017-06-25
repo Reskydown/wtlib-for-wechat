@@ -6,13 +6,13 @@ page{
 }
 .head{
     background-color:#009688;
-    padding:15px 12px;
+    padding:27rpx 21rpx;
     text-align:center;
 }
 .head-icon{
     color:white;
-    font-size:24px;
-    line-height: 30px;
+    font-size:43rpx;
+    line-height: 54rpx;
     float:right;
 }
 .footer{
@@ -29,23 +29,23 @@ page{
 }
 .footer-icon{
     color:#009688;
-    padding:15px;
-    font-size:24px;
+    padding:27rpx;
+    font-size:43rpx;
 }
 .user-head{
-    font-size:18px;
+    font-size:32rpx;
     color:white;
-    line-height:31px;
+    line-height:32rpx;
 }
 .book-info{
     display:flex;
     background-color: white;
-    border-bottom:1px solid #eeeeee;
+    border-bottom:1rpx solid #eeeeee;
     justify-content: space-between;
 }
 #submit{
-    margin:10px;
-    padding:5px 15px;
+    margin:18rpx;
+    padding:9rpx 27rpx;
     background-color:#FFC107;
     border-radius: 0.2em;
 }
@@ -53,13 +53,13 @@ page{
     display:inherit
 }
 .check-div{
-    margin:15px;
+    margin:27rpx;
 }
 .check-all{
-    padding-left:20px;
+    padding-left:36rpx;
 }
 #total{
-    margin:15px 0;
+    margin:27rpx 0;
 }
 
 /*每行单元格*/
@@ -69,7 +69,7 @@ page{
 	height:150rpx;
 	/*width属性解决标题文字太短而缩略图偏移*/
 	width:100%;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1rpx solid #eee;
 	padding: 30rpx 30rpx;
 	margin-right: 40rpx;
 	background: white;
@@ -79,7 +79,7 @@ page{
 .carts-container {
 	position: relative;
 	width: 100%;
-	height: 90px;
+	height: 163rpx;
 }
 
 /*左部图片*/
@@ -113,18 +113,18 @@ page{
 /*商品加减按钮*/
 /*stepper容器*/
 .stepper {
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	width: 70px;
-	height: 28px;
-	margin-left:170px;
+	border: 1rpx solid #ccc;
+	border-radius: 5rpx;
+	width: 125rpx;
+	height: 50rpx;
+	margin-left:307rpx;
 }
 
 
 /*加号与减号*/
 .stepper text {
-	width: 19px;
-	line-height: 26px;
+	width: 34rpx;
+	line-height: 47rpx;
 	text-align: center;
 	float: left;
 }
@@ -134,12 +134,12 @@ page{
 	color: black;
 	float: left;
 	margin: 0 auto;
-	width: 30px;
-	height: 26px;
+	width: 54rpx;
+	height: 47rpx;
 	text-align: center;
-	font-size: 12px;
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
+	font-size: 21rpx;
+	border-left: 1rpx solid #ccc;
+	border-right: 1rpx solid #ccc;
 }
 
 /*普通样式*/
