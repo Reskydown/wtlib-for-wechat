@@ -1,0 +1,127 @@
+@import '../../dist/icon.wxss';  
+@import '../../dist/main.wxss'; 
+
+page{
+    background: #eeeeee;
+}
+.main{
+    height:calc(100% - 230rpx);
+}
+input{
+    color:white;
+    width:100%;
+    padding:7rpx 7rpx 7rpx 18rpx;
+    text-align:left;
+    margin-top:9rpx;
+}
+.head{
+    background-color:#009688;
+    padding:27rpx 21rpx;
+    text-align:center;
+}
+.footer{
+    position:fixed;
+    bottom:0;
+    width:100%;
+}
+.footer-menu{
+    position:relative;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    background-color: white;
+}
+.footer-icon{
+    color:#009688;
+    padding:27rpx;
+    font-size:43rpx;
+}
+.search{
+    background-color: #017B70;
+    border-radius:0.3em;
+}
+.fa-icon{
+    padding:7rpx 7rpx 7rpx 18rpx;
+    font-size:40rpx;
+    color:white;
+    margin-top:10rpx;
+}
+.list-info{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: white;
+    margin-top:18rpx
+}
+.book-photo{
+    width:144rpx;
+    height:144rpx;
+    padding:18rpx 0;
+}
+.book-text{
+    padding-top:36rpx;
+}
+.title{
+    font-size:32rpx;
+}
+.description{
+    font-size:25rpx;
+    color:#808080;
+}
+.info-photo{
+    width: 217rpx;
+    height: 217rpx;
+    padding:18rpx 0;
+}
+.info-text{
+    padding-top:18rpx;
+}
+.user{
+    margin-top:18rpx;
+    border-bottom: solid 1rpx #cccccc;
+    background-color: white;
+}
+.user-div{
+    display:inline-block;
+}
+.user-photo{
+    width: 108rpx;
+    height:108rpx;
+    border-radius: 50%;
+    padding:18rpx;
+}
+.info-head{
+    color:white;
+    font-size:32rpx;
+    flex-direction:row;
+    justify-content:space-between;
+}
+.user-info{
+    color:#12a0e1;
+    font-size:24rpx;
+}
+.time{
+    color:#808080;
+    font-size:24rpx;
+}
+.content{
+    word-wrap:break-word;
+    word-break:break-all;
+    font-size:28rpx;
+}
+.user-mark{
+    display:inline-block;
+    vertical-align:top;
+    padding:18rpx;
+    width:70%
+}
+
+.book-description{
+    height:217rpx;
+    background-color:white;
+    padding:18rpx;
+    border-left:#f14344 solid 3rpx;
+}
+.info{
+    height:calc(100% - 200rpx);
+}

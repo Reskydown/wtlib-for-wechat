@@ -1,0 +1,91 @@
+<view class="head">
+    <view class="search {{search}}">
+        <view class="icon-search fa-icon"></view>
+        <input placeholder-class="holder" focus="true" placeholder="搜索"/>
+    </view>
+    <view class="info-head {{head}}">
+        <view class="icon-back head-icon" bindtap="hidden"></view>
+        <view class="margin-center">书本详情</view>
+    </view>
+</view>
+<scroll-view scroll-y="true" bindtap="info" class="main {{container}}">
+    <view class="list-info" bindtap="show">
+        <image class="book-photo" src="../../dist/img/timg.jpg"/>
+        <view class="book-text">
+            <view class="title">疯狂java讲义</view>
+            <view class="description">出版社：华中科技大学出版</view>
+            <view class="description">作者：哈哈哈哈</view>
+        </view>
+    </view>
+    <view class="list-info">
+        <image class="book-photo" src="../../dist/img/timg.jpg"/>
+        <view class="book-text">
+            <view class="title">疯狂java讲义</view>
+            <view class="description">出版社：华中科技大学出版社</view>
+            <view class="description">作者：哈哈哈哈</view>
+        </view>
+    </view>
+    <view class="list-info">
+        <image class="book-photo" src="../../dist/img/timg.jpg"/>
+        <view class="book-text">
+            <view class="title">疯狂java讲义</view>
+            <view class="description">出版社：华中科技大学出版社</view>
+            <view class="description">作者：哈哈哈哈</view>
+        </view>
+    </view>
+    <view class="list-info">
+        <image class="book-photo" src="../../dist/img/timg.jpg"/>
+        <view class="book-text">
+            <view class="title">疯狂java讲义</view>
+            <view class="description">出版社：华中科技大学出版社</view>
+            <view class="description">作者：哈哈哈哈</view>
+        </view>
+    </view>
+    <view class="list-info">
+        <image class="book-photo" src="../../dist/img/timg.jpg"/>
+        <view class="book-text">
+            <view class="title">疯狂java讲义</view>
+            <view class="description">出版社：华中科技大学出版社</view>
+            <view class="description">作者：哈哈哈哈</view>
+        </view>
+    </view>
+</scroll-view>
+<scroll-view scroll-y class="info {{info}}">
+    <view class="list-info">
+        <image class="info-photo" src="../../dist/img/timg.jpg"/>
+        <view class="info-text">
+            <view class="title">疯狂java讲义</view>
+            <view class="description">出版社：华中科技大学出版社</view>
+            <view class="description">作者：哈哈哈哈</view>
+            <view class="description">价格：哈哈哈哈</view>
+            <view class="description">数目：哈哈哈哈</view>
+            <view class="description">页数：哈哈哈哈</view>
+        </view>
+    </view>
+    <view class="book-description">
+        <view class="title">图书介绍</view>
+        <view class="description">巴拉巴拉巴拉巴拉巴拉</view>
+    </view>
+    <view class="user">
+        <view class="user-div"><image class="user-photo" src="../../dist/img/timg.jpg"/></view>
+        <view class="user-mark">
+            <view class="user-info">我有故事谁有酒？</view>
+            <view class="time">2019-06-04</view>
+            <view class="content">不拉不拉不拉</view>
+        </view>
+        <view class="user-div"><image class="user-photo" src="../../dist/img/timg.jpg"/></view>
+        <view class="user-mark">
+            <view class="user-info">我有故事谁有酒？</view>
+            <view class="time">2019-06-04</view>
+            <view class="content">不拉不拉不拉</view>
+        </view>
+    </view>
+</scroll-view>
+<view class="footer">
+    <view class="footer-menu">
+        <view class="icon-contacts footer-icon" ></view>
+        <navigator  class="icon-collections footer-icon" url="../storage/storage"></navigator >
+        <navigator  class="icon-person footer-icon" url="../myself/myself"></navigator >
+        <navigator  class="icon-settings footer-icon" url="../settings/settings"></navigator >
+    </view>
+</view>

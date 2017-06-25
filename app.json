@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/myself/myself",
+    "pages/storage/storage",
+    "pages/home/home",
+    "pages/settings/settings",
+    "pages/logs/logs"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

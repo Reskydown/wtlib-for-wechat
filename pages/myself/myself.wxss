@@ -1,0 +1,186 @@
+/* pages/myself/myself.wxss */
+@import '../../dist/icon.wxss';  
+@import '../../dist/main.wxss'; 
+
+page{
+    background: #eeeeee;
+}
+.content{
+    display:flex;
+    flex-direction:column;
+}
+.head{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    background-color:#009688;
+    padding:10px 12px;
+}
+.head-icon{
+    color:white;
+    font-size:24px;
+}
+.user-head{
+    font-size:18px;
+    color:white;
+    line-height:31px;
+}
+.user-info{
+    display: flex;
+    flex-direction:row;
+    justify-content:center;
+    background-color:white;
+}
+.photo{
+    height:100px;
+    width:100px;
+    padding:10px 0;
+    border-radius:50%;
+}
+.user-info{
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    background-color:white;
+}
+.user-text{
+    padding:40px 35px;
+}
+#username{
+    padding-bottom:5px;
+}
+#score{
+    color: #aaaaaa;
+}
+.book-info{
+    color: #aaaaaa;
+    font-size:18px;
+}
+.user-book{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    background-color:white;
+}
+.book{
+    text-align:center;
+}
+#borrow-num,#reservation-num,#limit-num{
+    font-size:20px;
+    padding:10px 0 15px 0;
+}
+.menu{
+    margin-top:10px;
+    background-color: white;
+}
+.menu-list{
+    display:flex;
+    flex-direction: row;
+    border-bottom:#eeeeee solid 1px;
+    justify-content: space-between;
+    margin:0 10px 0 10px;
+}
+#history,#turn-back,#reservation,#advice{
+    padding:15px;
+    font-size:18px;
+}
+.fa-angle-right{
+    font-size:24px !important;
+    padding:15px !important;
+}
+.footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+.footer-menu{
+    position:relative;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    background-color: white;
+}
+.footer-icon{
+    color:#009688;
+    padding:15px;
+    font-size:24px;
+}
+.history,.advice,.return-back,.reservation{
+    display:none;
+}
+.book-photo{
+    width:80px;
+    height:80px;
+    padding:10px 10px;
+    border-radius: 50%;
+    display:inline-block;
+}
+.book-text{
+    padding-top:10px;
+}
+.confirm-btn{
+    margin:10px 0 10px 90px;
+    padding:5px 10px;
+    background-color:#FFC107;
+    border-radius: 0.2em;
+    text-align:center;
+}
+.area-mark{
+    padding:10px;
+    background-color: white;
+}
+.mark{
+    padding:5px;
+}
+.area{
+    width:100%;
+    height:100px;
+    margin-top:10px;
+    border:1px #a9a9aa solid;
+}
+.icon-back,.icon-delete,.icon-check{
+    display:none;
+}
+.book-head{
+    display:flex;
+    justify-content:space-between;
+}
+.list-info{
+    background-color: white;
+    margin-top:10px;
+}
+.photo-info{
+    display:flex;
+    border-bottom: solid 1px #eeeeee;
+}
+.book-name{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    width:200px;
+    display:inline-block;
+    vertical-align:top;
+    padding:10px 0;
+    font-size:1em;
+}
+.book-status{
+    font-size:smaller;
+    color:#808080;
+}
+.book-extra{
+    display:flex;
+    justify-content:flex-end;
+}
+.book-time{
+    font-size:smaller;
+    color:#808080;
+    padding:5px 0;
+}
+.advice-btn,.reservation-btn,.confirm-btn{
+    margin:5px;
+    padding:3px 10px;
+    background-color:#FFC107;
+    border-radius: 0.2em;
+    text-align:center;
+    color:white;
+}

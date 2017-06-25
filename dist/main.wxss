@@ -1,0 +1,38 @@
+page {
+    height: 100%;
+    font-family: 微软雅黑;
+    width:100%;
+}
+li{
+    list-style: none;
+}
+.clear{
+    clear:both;
+}
+a {
+    text-decoration:none;
+}
+.text-center{
+    text-align: center;
+}
+.red{
+    color:red;
+}
+.clear{
+    clear:both;
+}
+.margin-center{
+    margin:0 auto;
+}
+.holder{
+    color:white;
+}
+.disp-block{
+    display:block;
+}
+.disp-flex{
+    display:flex;
+}
+.disp-none{
+    display:none;
+}

@@ -1,0 +1,169 @@
+/* pages/storage/storage.wxss */
+@import '../../dist/icon.wxss';  
+@import '../../dist/main.wxss'; 
+page{
+    background: #eeeeee;
+}
+.head{
+    background-color:#009688;
+    padding:15px 12px;
+    text-align:center;
+}
+.head-icon{
+    color:white;
+    font-size:24px;
+    line-height: 30px;
+    float:right;
+}
+.footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+.footer-menu{
+    position:relative;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    background-color: white;
+}
+.footer-icon{
+    color:#009688;
+    padding:15px;
+    font-size:24px;
+}
+.user-head{
+    font-size:18px;
+    color:white;
+    line-height:31px;
+}
+.book-info{
+    display:flex;
+    background-color: white;
+    border-bottom:1px solid #eeeeee;
+    justify-content: space-between;
+}
+#submit{
+    margin:10px;
+    padding:5px 15px;
+    background-color:#FFC107;
+    border-radius: 0.2em;
+}
+.btn-div{
+    display:inherit
+}
+.check-div{
+    margin:15px;
+}
+.check-all{
+    padding-left:20px;
+}
+#total{
+    margin:15px 0;
+}
+
+/*每行单元格*/
+.carts-item {
+	display: flex;
+	flex-direction: row;
+	height:150rpx;
+	/*width属性解决标题文字太短而缩略图偏移*/
+	width:100%;
+	border-bottom: 1px solid #eee;
+	padding: 30rpx 30rpx;
+	margin-right: 40rpx;
+	background: white;
+}
+
+/*item与button的容器*/
+.carts-container {
+	position: relative;
+	width: 100%;
+	height: 90px;
+}
+
+/*左部图片*/
+.carts-image {
+	width:150rpx;
+	height:150rpx;
+}
+
+
+/*右部描述*/
+.carts-text {
+	margin-left:40rpx;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/*右上部分标题*/
+.carts-title {
+	font-size: 28rpx;
+	color: #444;
+	line-height: 38rpx;
+	overflow: hidden;  
+	text-overflow: ellipsis; 
+	display: -webkit-box;  
+	-webkit-line-clamp: 2;  
+	-webkit-box-orient: vertical; 
+}
+
+/*商品加减按钮*/
+/*stepper容器*/
+.stepper {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	width: 70px;
+	height: 28px;
+	margin-left:170px;
+}
+
+
+/*加号与减号*/
+.stepper text {
+	width: 19px;
+	line-height: 26px;
+	text-align: center;
+	float: left;
+}
+
+/*数值*/
+.stepper input {
+	color: black;
+	float: left;
+	margin: 0 auto;
+	width: 30px;
+	height: 26px;
+	text-align: center;
+	font-size: 12px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+/*普通样式*/
+.stepper .normal{
+	color: black;
+}
+
+/*禁用样式*/
+.stepper .disabled{
+	color: #ccc;
+}
+
+.carts-list{
+	height:calc(100% - 310rpx);
+}
+
+/*复选框样式*/
+.carts-list icon {
+	margin-top: 60rpx;
+	margin-right: 20rpx;
+}
+
+.select-and-amount {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}

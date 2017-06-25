@@ -1,0 +1,50 @@
+<view class="head">
+  <span class="user-head">借阅仓库</span> 
+  <span bindtap="deleteDom" class="icon-delete head-icon"></span> 
+  <span class="clear"></span> 
+</view>
+<scroll-view scroll-y="true" class="carts-list">
+  <view wx:for="{{carts}}" class="carts-item" data-title="{{item.title}}" data-url="{{item.url}}">
+    <icon wx:if="{{item.selected}}" type="success_circle" size="20" bindtap="bindCheckbox" data-index="{{index}}" />
+    <icon wx:else type="circle" size="20" bindtap="bindCheckbox" data-index="{{index}}" />
+    <view>
+      <image class="carts-image" src="{{item.image}}" mode="aspectFill" />
+    </view>
+    <view class="carts-text">
+      <text class="carts-title">{{item.title}}</text>
+      <view class="carts-subtitle">
+        <text class="carts-price">{{item.sum}}</text>
+        <view class="stepper">
+
+          <!-- 减号 -->
+          <text class="{{minusStatuses[index]}}" data-index="{{index}}" bindtap="bindMinus">-</text>
+
+          <!-- 数值 -->
+          <input type="number" disabled="true" bindchange="bindManual" value="{{item.num}}" />
+
+          <!-- 加号 -->
+          <text class="normal" data-index="{{index}}" bindtap="bindPlus">+</text>
+          <span class="clear"></span> 
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view class="footer">
+  <view class="book-info">
+    <view class="check-div select-and-amount" bindtap="bindSelectAll">
+      <icon type="{{selectedAllStatus ? 'success_circle' : 'circle'}}" size="18" />
+      <span class="check-all">全选</span> 
+    </view>
+    <view class="btn-div">
+      <view id="total">合计：{{total}}本</view>
+      <view id="submit">确认</view>
+    </view>
+  </view>
+  <view class="footer-menu">
+    <navigator class="icon-contacts footer-icon" url="../home/home"></navigator>
+    <view class="icon-collections footer-icon"></view>
+    <navigator class="icon-person footer-icon" url="../myself/myself"></navigator>
+    <navigator class="icon-settings footer-icon" url="../settings/settings"></navigator>
+  </view>
+</view>
