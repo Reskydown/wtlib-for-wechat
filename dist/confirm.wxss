@@ -1,0 +1,74 @@
+input{
+    background: none;
+    border:0;
+    border-radius:0;
+    font-size:36rpx;
+    padding:12rpx;
+    color:white;
+    flex-grow:1;
+    width:100%
+}
+.content{
+    background-color: #4DB6AC;
+    height:100%;
+}
+.logo{
+    text-align:center;
+    padding-top:130rpx;
+}
+.logo image{
+    width:489rpx;
+    height:181rpx;
+}
+.login-button{
+    border-bottom: #5b4f63 solid 3rpx;
+    background-color: #735d75;
+    padding:14rpx;
+    color:#fff;
+    margin:36rpx 135rpx 21rpx;
+    text-align: center;
+}
+.sign-other-button{
+    position: relative;
+    padding:18rpx;
+    color:#fff;
+    font-size: 30rpx;
+    text-align: center;
+    margin:0 auto;
+}
+.forget{
+    color:#fff;
+    text-align: center;
+}
+.footer-div{
+    position: absolute;
+    bottom:0;
+    height:15%;
+    background-color: #00796B;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:40%
+}
+.group-form{
+    border-bottom:white 1rpx solid;
+    margin:21rpx 72rpx 18rpx;
+    display:flex;
+}
+.fa-icon{
+    font-size:47rpx;
+    color:white;
+    margin-top:9rpx;
+}
+.weixin-form{
+    border:white solid 1rpx;
+    margin:21rpx 94rpx 18rpx;
+    display:flex;
+    padding:3rpx 23rpx;
+}

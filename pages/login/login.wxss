@@ -1,0 +1,3 @@
+@import '../../dist/icon.wxss';  
+@import '../../dist/main.wxss'; 
+@import '../../dist/confirm.wxss'; 

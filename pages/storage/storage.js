@@ -16,8 +16,9 @@ Page({
     var total=0;
     var carts = this.data.carts;
     for (var i = 0; i < carts.length; i++) {
-      console.log(carts[i].num)
-      total += carts[i].num;
+      var selected = carts[i].selected;
+      if (selected == true)
+        total += carts[i].num;
     }
     this.setData({
       total : total
@@ -46,6 +47,7 @@ Page({
       carts: carts,
       minusStatuses: minusStatuses
     });
+     this.getSum();
   },
   bindPlus: function (e) {
     var index = parseInt(e.currentTarget.dataset.index);
@@ -65,24 +67,23 @@ Page({
       carts: carts,
       minusStatuses: minusStatuses
     });
+     this.getSum();
   },
   deleteDom: function () {
     for (var i = 0; i < this.data.carts.length; i++) {
-      console.log(i);
-      console.log(this.data.carts[i].selected==true);
       if (this.data.carts[i].selected==true) {
         this.data.carts.splice(i,1);
         //因为数组会更新，即第二个数据下标变成0
         i=i-1;
-        console.log(i);
       }
     }
     this.setData({
       carts: this.data.carts
     });
+     this.getSum();
   },
   bindCheckbox: function (e) {
-    wx.showLoading({
+    wx.showToast({
       title: '操作中',
       mask: true
     });
@@ -98,10 +99,11 @@ Page({
     this.setData({
       carts: carts,
     });
-    wx.hideLoading();
+     this.getSum();
+    wx.hideToast();
   },
   bindSelectAll: function () {
-    wx.showLoading({
+    wx.showToast({
       title: '操作中',
       mask: true
     });
@@ -115,11 +117,11 @@ Page({
     for (var i = 0; i < carts.length; i++) {
       carts[i].selected = selectedAllStatus;
     }
-    wx.hideLoading();
+    wx.hideToast();
     this.setData({
       selectedAllStatus: selectedAllStatus,
       carts: carts,
     });
-
+ this.getSum();
   }
 })

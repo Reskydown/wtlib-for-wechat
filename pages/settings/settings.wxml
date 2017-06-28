@@ -29,9 +29,9 @@
 </view>
 <view class="footer">
   <view class="footer-menu">
-    <navigator class="icon-contacts footer-icon" url="../home/home"></navigator>
-    <navigator class="icon-collections footer-icon" url="../storage/storage"></navigator>
-    <navigator class="icon-person footer-icon" url="../myself/myself"></navigator>
+    <navigator open-type="redirect" class="icon-contacts footer-icon" url="../home/home"></navigator>
+    <navigator open-type="redirect" class="icon-collections footer-icon" url="../storage/storage"></navigator>
+    <navigator open-type="redirect" class="icon-person footer-icon" url="../myself/myself"></navigator>
     <view class="icon-settings footer-icon"></view>
   </view>
 </view>

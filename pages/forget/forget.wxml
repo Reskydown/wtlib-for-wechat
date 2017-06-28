@@ -1,0 +1,27 @@
+<view class="content">
+  <view class="logo">
+    <image src="../../dist/img/logo.png" />
+  </view>
+  <view class="form">
+    <view class="group-form">
+      <view class="icon-person fa-icon"></view>
+      <input type="text" focus="true" placeholder-class="holder" placeholder="cellphone number" />
+    </view>
+    <view class="group-form">
+      <view class="icon-person fa-icon"></view>
+      <input type="text" focus="true" placeholder-class="holder" placeholder="verification code" />
+      <view class="send">发送验证码</view>
+    </view>
+    <view class="group-form">
+      <i class="icon-work fa-icon"></i>
+      <input type="text" focus="true" placeholder-class="holder" placeholder="password" />
+    </view>
+    <view class="login-button" href="login.html">Confirm</view>
+  </view>
+  <view class="footer-div">
+    <view class="weixin-form">
+      <i class="fa fa-weixin fa-icon"></i>
+      <view class="sign-other-button" href="login.html">Login With WeChat</view>
+    </view>
+  </view>
+</view>

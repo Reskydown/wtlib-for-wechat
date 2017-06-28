@@ -84,8 +84,8 @@
 <view class="footer">
     <view class="footer-menu">
         <view class="icon-contacts footer-icon" ></view>
-        <navigator  class="icon-collections footer-icon" url="../storage/storage"></navigator >
-        <navigator  class="icon-person footer-icon" url="../myself/myself"></navigator >
-        <navigator  class="icon-settings footer-icon" url="../settings/settings"></navigator >
+        <navigator open-type="redirect"  class="icon-collections footer-icon" url="../storage/storage"></navigator >
+        <navigator open-type="redirect"  class="icon-person footer-icon" url="../myself/myself"></navigator >
+        <navigator open-type="redirect" class="icon-settings footer-icon" url="../settings/settings"></navigator >
     </view>
 </view>

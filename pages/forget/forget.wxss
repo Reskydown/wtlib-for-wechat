@@ -1,0 +1,10 @@
+@import '../../dist/icon.wxss';  
+@import '../../dist/main.wxss'; 
+@import '../../dist/confirm.wxss'; 
+
+.send{
+    font-size:28rpx;
+    width:220rpx;
+    line-height:72rpx;
+    color:sandybrown;
+}

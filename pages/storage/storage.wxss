@@ -115,9 +115,9 @@ page{
 .stepper {
 	border: 1rpx solid #ccc;
 	border-radius: 5rpx;
-	width: 125rpx;
+	width: 126rpx;
 	height: 50rpx;
-	margin-left:307rpx;
+	margin-left:300rpx;
 }
 
 

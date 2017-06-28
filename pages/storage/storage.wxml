@@ -42,9 +42,9 @@
     </view>
   </view>
   <view class="footer-menu">
-    <navigator class="icon-contacts footer-icon" url="../home/home"></navigator>
+    <navigator open-type="redirect" class="icon-contacts footer-icon" url="../home/home"></navigator>
     <view class="icon-collections footer-icon"></view>
-    <navigator class="icon-person footer-icon" url="../myself/myself"></navigator>
-    <navigator class="icon-settings footer-icon" url="../settings/settings"></navigator>
+    <navigator open-type="redirect" class="icon-person footer-icon" url="../myself/myself"></navigator>
+    <navigator open-type="redirect" class="icon-settings footer-icon" url="../settings/settings"></navigator>
   </view>
 </view>

@@ -1,16 +1,17 @@
 {
   "pages":[
+    "pages/forget/forget",
+    "pages/login/login",
+    "pages/storage/storage",
     "pages/settings/settings",
     "pages/myself/myself",
-    "pages/storage/storage",
     "pages/home/home",
     "pages/logs/logs"
-    
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "图书推荐系统",
     "navigationBarTextStyle":"black"
   }
 }

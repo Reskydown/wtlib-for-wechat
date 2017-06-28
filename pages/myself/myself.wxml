@@ -44,7 +44,6 @@
       <view id="my_advice" bindtap="show_me">我的评价</view>
       <view class="fa fa-angle-right"></view>
     </view>
-</contact-button>
     <view class="menu-list">
       <view id="advice">意见反馈</view>
       <view class="fa fa-angle-right"></view>
@@ -153,9 +152,9 @@
 </scroll-view>
 <view class="footer">
   <view class="footer-menu">
-    <navigator class="icon-contacts footer-icon" url="../home/home"></navigator>
-    <navigator class="icon-collections footer-icon" url="../storage/storage"></navigator>
+    <navigator open-type="redirect" class="icon-contacts footer-icon" url="../home/home"></navigator>
+    <navigator open-type="redirect" class="icon-collections footer-icon" url="../storage/storage"></navigator>
     <view class="icon-person footer-icon"></view>
-    <navigator class="icon-settings footer-icon" url="../settings/settings"></navigator>
+    <navigator open-type="redirect" class="icon-settings footer-icon" url="../settings/settings"></navigator>
   </view>
 </view>
