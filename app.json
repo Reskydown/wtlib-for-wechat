@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/forget/forget",
     "pages/login/login",
+    "pages/forget/forget",
     "pages/storage/storage",
     "pages/settings/settings",
     "pages/myself/myself",

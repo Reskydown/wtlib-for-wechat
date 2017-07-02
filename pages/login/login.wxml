@@ -5,13 +5,13 @@
   <view class="form">
     <view class="group-form">
       <view class="icon-person fa-icon"></view>
-      <input type="text" focus="true" placeholder-class="holder" placeholder="username" />
+      <input type="text" focus="true" placeholder-class="holder" placeholder="username" bindinput="userNameInput"/>
     </view>
     <view class="group-form">
       <i class="icon-work fa-icon"></i>
-      <input type="text" focus="true" placeholder-class="holder" placeholder="password" />
+      <input type="password" focus="true" placeholder-class="holder" placeholder="password" bindinput="passwordInput"/>
     </view>
-    <navigator class="login-button" open-type="redirect" url="../home/home">Login</navigator>
+    <view class="login-button" bindtap="confirm">Login</view>
     <navigator class="forget" url="../forget/forget"> Forgot Password?</navigator>
   </view>
   <view class="footer-div">
