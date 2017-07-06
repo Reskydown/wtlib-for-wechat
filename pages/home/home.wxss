@@ -47,22 +47,27 @@ input{
     margin-top:10rpx;
 }
 .list-info{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
     background-color: white;
-    margin-top:18rpx
+    margin-top:18rpx;
 }
 .book-photo{
     width:144rpx;
     height:144rpx;
-    padding:18rpx 0;
+    padding:18rpx 20rpx;
 }
-.book-text{
-    padding-top:36rpx;
+.book-info{
+    display:flex;
+    border-bottom: solid 1rpx #eeeeee;
 }
 .title{
-    font-size:32rpx;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    width:362rpx;
+    display:inline-block;
+    vertical-align:top;
+    padding:35rpx 0 10rpx 0;
+    font-size:28rpx;
 }
 .description{
     font-size:25rpx;
@@ -123,4 +128,27 @@ input{
 }
 .info{
     height:calc(100% - 200rpx);
+}
+.book-extra{
+    display:flex;
+    justify-content:flex-end;
+}
+.advice-btn{
+    margin:9rpx;
+    padding:5rpx 18rpx;
+    background-color:#FFC107;
+    border-radius: 0.2em;
+    text-align:center;
+    color:white;
+    font-size:28rpx;
+}
+.detail-info{
+   display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: white;
+    margin-top:18rpx
+}
+.detail-title{
+  font-size:32rpx;
 }

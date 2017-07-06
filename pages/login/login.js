@@ -11,6 +11,29 @@ Page({
       loginId: e.detail.value
     })
   },
+  wechat_confirm: function () {
+    wx.login({
+      success: function (res) {
+        if (res.code) {
+          //发起网络请求
+          wx.request({
+            url: 'http://127.0.0.1:8080/wtlib-web/confirm/OAuth',
+            data: {
+              code: res.code
+            }
+          })
+          console.log(code)
+        } else {
+          wx.showModal({
+            title: "登录失败",
+            content: "获取用户登录态失败",
+            showCancel: false,
+          })
+          console.log('获取用户登录态失败！' + res.errMsg)
+        }
+      }
+    });
+  },
   confirm: function () {
     if (this.data.loginId == null) {
       wx.showModal({
@@ -45,8 +68,8 @@ Page({
           var code = res.data.code
           if (code == 10000) {
             var data = res.data.data;
-            wx.setStorage({"data":data});
-            wx.redirectTo({url:"/pages/home/home"});
+            wx.setStorage({ "data": data });
+            wx.redirectTo({ url: "/pages/home/home" });
           } else {
             wx.showModal({
               title: "登录失败",

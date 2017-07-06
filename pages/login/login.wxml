@@ -17,7 +17,7 @@
   <view class="footer-div">
     <view class="weixin-form">
       <i class="fa fa-weixin fa-icon"></i>
-      <navigator class="sign-other-button" open-type="redirect" url="../home/home">Login With WeChat</navigator>
+      <view class="sign-other-button" bindtap="wechat_confirm">Login With WeChat</view>
     </view>
   </view>
 </view>
