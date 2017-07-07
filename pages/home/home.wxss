@@ -104,10 +104,13 @@ input{
 .user-info{
     color:#12a0e1;
     font-size:24rpx;
+    display:inline-block;
 }
 .time{
     color:#808080;
     font-size:24rpx;
+    position:absolute;
+    right:30rpx;
 }
 .content{
     word-wrap:break-word;
@@ -151,4 +154,12 @@ input{
 }
 .detail-title{
   font-size:32rpx;
+}
+.icon-url{
+  width:40rpx;
+  height:40rpx;
+}
+.user-icon{
+  display:flex;
+  align-items:center;
 }

@@ -1,22 +1,22 @@
 <view class="head">
   <view class="search {{search}}">
-    <view class="icon-search fa-icon"></view>
-    <input placeholder-class="holder" focus="true" placeholder="搜索" />
+    <view class="icon-search fa-icon" bindtap="find"></view>
+    <input placeholder-class="holder" focus="true" bindinput="search_input" placeholder="搜索" />
   </view>
   <view class="info-head {{head}}">
     <view class="icon-back head-icon" bindtap="hidden"></view>
     <view class="margin-center">书本详情</view>
   </view>
 </view>
-<scroll-view scroll-y="true" bindtap="info" class="main {{container}}">
-  <view class="list-info" wx:for="{{book_list}}">
-    <view class="book-info"  bindtap="show">
-      <image class="book-photo" src="../../dist/img/timg.jpg" />
+<scroll-view scroll-y="true" bindscrolltolower="load_book" bindtap="info" class="main {{container}}">
+  <view class="list-info {{book}}" wx:for="{{book_list}}" wx:if="{{item .bookTitle!=null}}">
+    <view class="book-info" data-index="{{index}}" bindtap="show">
+      <image class="book-photo" src="{{item.bookCoverUrl}}" />
       <view>
         <view class="title">{{item.bookTitle}}</view>
-        <view class="description">出版社：{{item.bookDesc}}</view>
-        <view class="description">作者：{{item.bookWriter
-}}</view>
+        <view class="description">出版社：{{item.bookPublisher}}</view>
+        <view class="description">作者：{{item.bookWriter }}
+        </view>
       </view>
     </view>
     <view class="book-extra">
@@ -26,36 +26,32 @@
 </scroll-view>
 <scroll-view scroll-y class="info {{info}}">
   <view class="detail-info">
-    <image class="info-photo" src="../../dist/img/timg.jpg" />
+    <image class="info-photo" src="{{book_single.bookCoverUrl}}" />
     <view class="info-text">
-      <view class="detail-title">疯狂java讲义</view>
-      <view class="description">出版社：华中科技大学出版社</view>
-      <view class="description">作者：哈哈哈哈</view>
-      <view class="description">价格：哈哈哈哈</view>
-      <view class="description">数目：哈哈哈哈</view>
-      <view class="description">页数：哈哈哈哈</view>
+      <view class="detail-title">{{book_single.bookTitle}}</view>
+      <view class="description">出版社：{{book_single.bookPublisher}}</view>
+      <view class="description">作者：{{book_single.bookWriter}}</view>
+      <view class="description">价格：{{book_single.bookPrice}}</view>
+      <view class="description">数目：{{book_single.bookNum}}</view>
+      <view class="description">页数：{{book_single.bookPageNum}}</view>
     </view>
   </view>
   <view class="book-description">
-    <view class="title">图书介绍</view>
-    <view class="description">巴拉巴拉巴拉巴拉巴拉</view>
+    <view>图书介绍</view>
+    <view class="description">{{book_single.bookDesc}}</view>
   </view>
-  <view class="user">
+  <view class="user" wx:for="{{label_list}}" wx:if="{{item.photoUrl!=null}}">
+  {{item}}
     <view class="user-div">
-      <image class="user-photo" src="../../dist/img/timg.jpg" />
+      <image class="user-photo" src="{{item.photoUrl}}" />
     </view>
     <view class="user-mark">
-      <view class="user-info">我有故事谁有酒？</view>
-      <view class="time">2019-06-04</view>
-      <view class="content">不拉不拉不拉</view>
-    </view>
-    <view class="user-div">
-      <image class="user-photo" src="../../dist/img/timg.jpg" />
-    </view>
-    <view class="user-mark">
-      <view class="user-info">我有故事谁有酒？</view>
-      <view class="time">2019-06-04</view>
-      <view class="content">不拉不拉不拉</view>
+      <view class="user-icon">
+        <view class="user-info">{{item.username}}</view>
+        <image class="icon-url" src="{{item.iconUrl}}"></image>
+      <view class="time">{{item.createTime}}</view>
+      </view>
+      <view class="content">{{item.value}}</view>
     </view>
   </view>
 </scroll-view>

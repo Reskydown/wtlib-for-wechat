@@ -17,7 +17,7 @@ Page({
         if (res.code) {
           //发起网络请求
           wx.request({
-            url: 'http://127.0.0.1:8080/wtlib-web/confirm/OAuth',
+            url: 'http://127.0.0.1:8080/wtlib-web/confirm/auth',
             data: {
               code: res.code
             }
