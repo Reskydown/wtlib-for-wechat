@@ -13,26 +13,68 @@ Page({
   },
   wechat_confirm: function () {
     wx.login({
-      success: function (res) {
-        if (res.code) {
-          //发起网络请求
-          wx.request({
-            url: 'http://127.0.0.1:8080/wtlib-web/confirm/auth',
-            data: {
-              code: res.code
+      success: function (r) {
+        var code = r.code;//登录凭证
+        if (code) {
+          //2、调用获取用户信息接口
+          wx.getUserInfo({
+            success: function (res) {
+              console.log({ encryptedData: res.encryptedData, iv: res.iv, code: code })
+              //3.请求自己的服务器，解密用户信息 获取unionId等加密信息
+              wx.request({
+                url: 'http://127.0.0.1:8080/wtlib-web/confirm/auth',//自己的服务接口地址
+                method: 'post',
+                header: {
+                  'content-type': 'application/x-www-form-urlencoded'
+                },
+                data: { encryptedData: res.encryptedData, iv: res.iv, code: code },
+                success: function (data) {
+                  //4.解密成功后 获取自己服务器返回的结果
+                  if (data.data.status == 1) {
+                    var userInfo_ = data.data.userInfo;
+                    console.log(userInfo_)
+                    wx.redirectTo({ url: "/pages/home/home" });
+                  } else {
+                    wx.showModal({
+                      title: "请求超时",
+                      content: "解密失败！",
+                      showCancel: false,
+                    })
+                  }
+                },
+                fail: function () {
+                  wx.showModal({
+                    title: "请求超时",
+                    content: "系统错误！",
+                    showCancel: false,
+                  })
+                }
+              })
+            },
+            fail: function () {
+              wx.showModal({
+                title: "请求超时",
+                content: "获取用户登录态失败！",
+                showCancel: false,
+              })
             }
           })
-          console.log(code)
         } else {
           wx.showModal({
-            title: "登录失败",
-            content: "获取用户登录态失败",
+            title: "请求超时",
+            content: "获取用户登录态失败！" +r.errMsg,
             showCancel: false,
           })
-          console.log('获取用户登录态失败！' + res.errMsg)
         }
+      },
+      fail: function () {
+        wx.showModal({
+          title: "请求超时",
+          content: "登陆失败",
+          showCancel: false,
+        })
       }
-    });
+    })
   },
   confirm: function () {
     if (this.data.loginId == null) {
@@ -68,7 +110,7 @@ Page({
           var code = res.data.code
           if (code == 10000) {
             var data = res.data.data;
-            wx.setStorage({ "data": data });
+            wx.setStorage({ "key": data });
             wx.redirectTo({ url: "/pages/home/home" });
           } else {
             wx.showModal({
