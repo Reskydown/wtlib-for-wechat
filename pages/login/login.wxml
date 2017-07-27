@@ -5,19 +5,13 @@
   <view class="form">
     <view class="group-form">
       <view class="icon-person fa-icon"></view>
-      <input type="text" focus="true" placeholder-class="holder" placeholder="username" bindinput="userNameInput"/>
+      <input type="text" focus="true" placeholder-class="holder" placeholder="username" bindinput="userNameInput" />
     </view>
     <view class="group-form">
       <i class="icon-work fa-icon"></i>
-      <input type="password" focus="true" placeholder-class="holder" placeholder="password" bindinput="passwordInput"/>
+      <input type="password" focus="true" placeholder-class="holder" placeholder="password" bindinput="passwordInput" />
     </view>
     <view class="login-button" bindtap="confirm">Login</view>
     <navigator class="forget" url="../forget/forget"> Forgot Password?</navigator>
-  </view>
-  <view class="footer-div">
-    <view class="weixin-form">
-      <i class="fa fa-weixin fa-icon"></i>
-      <view class="sign-other-button" bindtap="wechat_confirm">Login With WeChat</view>
-    </view>
   </view>
 </view>

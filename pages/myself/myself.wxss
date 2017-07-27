@@ -38,7 +38,8 @@ page{
     border-radius:50%;
 }
 .user-text{
-    padding:72rpx 63rpx;
+    padding:72rpx 0 72rpx 63rpx;
+    width:420rpx;
 }
 #username{
     padding-bottom:9rpx;
@@ -177,4 +178,9 @@ page{
 }
 .disp-flex{
     flex-direction:column;
+}
+.contact{
+  padding:14rpx 0;
+  font-size:32rpx;
+  line-height:68rpx;
 }

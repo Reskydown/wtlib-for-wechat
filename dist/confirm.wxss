@@ -28,21 +28,13 @@ input{
     margin:36rpx 135rpx 21rpx;
     text-align: center;
 }
-.sign-other-button{
-    position: relative;
-    padding:18rpx;
-    color:#fff;
-    font-size: 30rpx;
-    text-align: center;
-    margin:0 auto;
-}
 .forget{
     color:#fff;
     text-align: center;
 }
 .footer-div{
-    position: absolute;
-    bottom:0;
+    /*position: absolute;
+    top:0;*/
     height:15%;
     background-color: #00796B;
     width:100%;
@@ -65,10 +57,4 @@ input{
     font-size:47rpx;
     color:white;
     margin-top:9rpx;
-}
-.weixin-form{
-    border:white solid 1rpx;
-    margin:21rpx 94rpx 18rpx;
-    display:flex;
-    padding:3rpx 23rpx;
 }

@@ -20,11 +20,12 @@
       </view>
     </view>
     <view class="book-extra">
-      <view class="advice-btn" bindtap="scan_photo">借阅</view>
+      <view wx:if="{{item.isReservateAble==1}}" class="advice-btn" bindtap="reservate">预定</view>
+      <view wx:else class="advice-btn" bindtap="borrow">借阅</view>
     </view>
   </view>
 </scroll-view>
-<scroll-view scroll-y class="info {{info}}">
+<scroll-view scroll-y bindscrolltolower="load_label" class="info {{info}}">
   <view class="detail-info">
     <image class="info-photo" src="{{book_single.bookCoverUrl}}" />
     <view class="info-text">
@@ -40,14 +41,13 @@
     <view>图书介绍</view>
     <view class="description">{{book_single.bookDesc}}</view>
   </view>
-  <view class="user" wx:for="{{label_list}}" wx:if="{{item.photoUrl!=null}}">
-  {{item}}
+  <view class="user" wx:for="{{label_list}}" wx:if="{{item.iconUrl!=null}}">
     <view class="user-div">
-      <image class="user-photo" src="{{item.photoUrl}}" />
+      <image class="user-photo" src="{{item.avatarUrl}}" />
     </view>
     <view class="user-mark">
       <view class="user-icon">
-        <view class="user-info">{{item.username}}</view>
+        <view class="user-info">{{item.nickName}}</view>
         <image class="icon-url" src="{{item.iconUrl}}"></image>
       <view class="time">{{item.createTime}}</view>
       </view>

@@ -6,24 +6,24 @@
 <scroll-view scroll-y="true" class="content {{container}}">
   <view class="user">
     <view class="user-info">
-      <image class="photo" src="../../dist/img/timg.jpg"></image>
+      <image class="photo" src="{{user_info.avatarUrl}}"></image>
       <view class="user-text">
-        <view id="username">我有故事谁有酒？</view>
-        <view id="score">信用度：1000</view>
+        <view id="username">{{user_info.nickName}}</view>
+        <view id="score">信用度：{{center_info.credit}}</view>
       </view>
     </view>
     <view class="user-book">
       <view class="book">
         <view class="book-info">借阅中</view>
-        <view id="borrow-num">3</view>
+        <view id="borrow-num">{{center_info.borrow}}</view>
       </view>
       <view class="book">
         <view class="book-info">预约中</view>
-        <view id="reservation-num">0</view>
+        <view id="reservation-num">{{center_info.reservation}}</view>
       </view>
       <view class="book">
         <view class="book-info">逾期</view>
-        <view id="limit-num">1</view>
+        <view id="limit-num">{{center_info.overTime}}</view>
       </view>
     </view>
   </view>
@@ -44,9 +44,8 @@
       <view id="my_advice" bindtap="show_me">我的评价</view>
       <view class="fa fa-angle-right"></view>
     </view>
-    <view class="menu-list">
-      <view id="advice">意见反馈</view>
-      <view class="fa fa-angle-right"></view>
+    <view>
+    <contact-button class="contact" type="default-light" session-from="weapp">意见反馈</contact-button>
     </view>
   </view>
 </scroll-view>
@@ -60,7 +59,7 @@
       </view>
     </view>
     <view class="book-extra">
-      <view class="advice-btn" bindtap="show_advice">查看全部</view>
+      <view class="advice-btn">查看全部</view>
     </view>
   </view>
   <view class="list-info">

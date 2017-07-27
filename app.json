@@ -1,11 +1,10 @@
 {
   "pages":[
-    "pages/login/login",
     "pages/myself/myself",
     "pages/home/home",
+    "pages/login/login",
     "pages/storage/storage",
     "pages/forget/forget",
-    "pages/settings/settings",
     "pages/logs/logs"
   ],
   "window":{
