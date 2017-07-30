@@ -1,7 +1,7 @@
 <view class="head">
   <view class="{{icon_back}} icon-back head-icon" bindtap="show_container"></view>
   <view class="user-head margin-center">{{user_head}}</view>
-  <view class="{{icon_check}} head-icon"></view>
+  <view class="{{icon_check}} icon-check head-icon" bindtap="confirm_advice"></view>
 </view>
 <scroll-view scroll-y="true" class="content {{container}}">
   <view class="user">
@@ -49,25 +49,13 @@
     </view>
   </view>
 </scroll-view>
-<scroll-view scroll-y="true" class="my_advice {{my_advice}}">
-  <view class="list-info">
+<scroll-view scroll-y="true" class="my-advice {{my_advice}}" bindscrolltolower="load_label">
+  <view class="list-info" wx:for="{{label_list}}" wx:if="{{item .bookTitle!=null}}">
     <view class="photo-info">
-      <image class="photo" src="../../dist/img/timg.jpg"></image>
+      <image class="photo" src="{{item.bookCoverUrl}}"></image>
       <view>
-        <view class="book-name">疯狂java讲义</view>
-        <view class="book-status">好书好书好书好书好书</view>
-      </view>
-    </view>
-    <view class="book-extra">
-      <view class="advice-btn">查看全部</view>
-    </view>
-  </view>
-  <view class="list-info">
-    <view class="photo-info">
-      <image class="photo" src="../../dist/img/timg.jpg"></image>
-      <view>
-        <view class="book-name">疯狂java讲义</view>
-        <view class="book-status">好书好书好书好书好书</view>
+        <view class="book-name">{{item.bookTitle}}</view>
+        <view class="book-status">{{item.value}}</view>
       </view>
     </view>
     <view class="book-extra">
@@ -75,77 +63,69 @@
     </view>
   </view>
 </scroll-view>
-<scroll-view scroll-y="true" class="history {{history}}">
-  <view class="list-info">
+<scroll-view scroll-y="true"scroll-y="true" bindscrolltolower="load_history" class="history {{history}}">
+  <view class="list-info" wx:for="{{recoder_list}}" wx:if="{{item .bookTitle!=null}}">
     <view class="photo-info">
-      <image class="photo" src="../../dist/img/timg.jpg"></image>
+      <image class="photo" src="{{item.bookCoverUrl}}"></image>
       <view>
-        <view class="book-name">疯狂java讲义</view>
-        <view class="book-time">2017-04-04 - 2017-03-05</view>
-        <view class="book-status">已归还</view>
+        <view class="book-name">{{item.bookTitle}}</view>
+        <view class="book-time">{{item.borrowTime}} - {{item.returnTime}}</view> 
+        <view wx:if="{{item.borrowStatus==002}}" class="book-status">借阅状态</view>
+        <view wx:if="{{item.borrowStatus==003}}" class="book-status">超时未还</view>
+        <view wx:if="{{item.borrowStatus==004}}" class="book-status">已归还</view>
+        <view wx:if="{{item.borrowStatus==005}}" class="book-status">已评价</view>
       </view>
     </view>
     <view class="book-extra">
-      <view class="advice-btn" bindtap="show_advice">评价</view>
-    </view>
-  </view>
-  <view class="list-info">
-    <view class="photo-info">
-      <image class="photo" src="../../dist/img/timg.jpg"></image>
-      <view>
-        <view class="book-name">疯狂java讲义</view>
-        <view class="book-time">2017-04-04 - 2017-03-05</view>
-        <view class="book-status">已归还</view>
-      </view>
-    </view>
-    <view class="book-extra">
-      <view class="advice-btn">评价</view>
+      <view wx:if="{{item.borrowStatus==002 || item.borrowStatus==003}}" class="advice-btn" bindtap="scan_back">归还</view>
+      <view wx:if="{{item.borrowStatus==004}}" class="advice-btn" bindtap="show_advice" data-index="{{index}}">评价</view>
     </view>
   </view>
 </scroll-view>
-<scroll-view scroll-y="true" class="return-back {{return_back}}">
-  <view class="list-info">
+<scroll-view scroll-y="true" class="return-back {{return_back}}" bindscrolltolower="load_back">
+  <view class="list-info" wx:for="{{recoder_list}}" wx:if="{{item .bookTitle!=null}}">
     <view class="photo-info">
-      <image class="photo" src="../../dist/img/timg.jpg"></image>
+      <image class="photo" src="{{item.bookCoverUrl}}"></image>
       <view>
-        <view class="book-name">书名：疯狂java讲义</view>
-        <view class="book-time">归还日期：2017-04-04</view>
+        <view class="book-name">书名：{{item.bookTitle}}</view>
+        <view class="book-time">借阅日期：{{item.borrowTime}}</view>
+        <view class="book-time">应归还日期：{{item.borrowDeadLine}}</view>
       </view>
     </view>
     <view class="book-extra">
-      <view class="confirm-btn">确认</view>
+      <view class="confirm-btn" bindtap="scan_back">归还</view>
     </view>
   </view>
 </scroll-view>
-<scroll-view scroll-y="true" class="reservation {{reservation}}">
-  <view class="list-info">
+<scroll-view scroll-y="true" class="reservation {{reservation}}" bindscrolltolower="load_reservation">
+  <view class="list-info"  wx:for="{{reservation_list}}" wx:if="{{item .bookTitle!=null}}">
     <view class="photo-info">
-      <image class="photo" src="../../dist/img/timg.jpg"></image>
+      <image class="photo" src="{{item.bookCoverUrl}}"></image>
       <view>
-        <view class="book-name">疯狂java讲义</view>
-        <view class="book-status">作者：达科特</view>
-        <view class="book-status">出版社：清华大学出版社</view>
-        <view class="book-time">出版年：2015-6-9</view>
+        <view class="book-name">{{item.bookTitle}}</view>
+        <view class="book-status">作者：{{item.bookWriter}}</view>
+        <view class="book-status">出版社：{{item.bookPublisher}}</view>
       </view>
     </view>
     <view class="book-extra">
-      <view class="reservation-btn">取消预约</view>
+      <view wx:if="{{item.isBorrowAble==1}}" class="reservation-btn">借阅</view>
+      <view wx:if="{{item.isReservateAble==1}}" class="reservation-btn" bindtap="cancel_reservation" data-index="{{index}}">取消预约</view>
     </view>
   </view>
 </scroll-view>
 <scroll-view scroll-y="true" class="advice {{advice}}">
   <view class="list-info">
     <view class="photo-info">
-      <image class="photo" src="../../dist/img/timg.jpg"></image>
+      <image class="photo" src="{{advice_list.bookCoverUrl}}"></image>
       <view>
-        <view class="book-name">疯狂java讲义</view>
-        <view class="book-time">2017-04-04 - 2017-03-05</view>
+        <view class="book-name">{{advice_list.bookTitle}}</view>
+        <view class="book-time">{{advice_list.borrowTime}} - {{advice_list.returnTime}}</view>
       </view>
     </view>
   </view>
   <view class="area-mark">
     <view class="mark">评论</view>
-    <textarea class="area">
+    <textarea class="area" bindblur="area_change" value="{{value}}">
     </textarea>
   </view>
 </scroll-view>

@@ -5,7 +5,7 @@
 page{
     background: #eeeeee;
 }
-.content,my_advice,.history,.return-back,.reservation,.advice{
+.content,.my-advice,.history,.return-back,.reservation,.advice{
     flex-direction:column;
     height:calc(100% - 220rpx);
 }
