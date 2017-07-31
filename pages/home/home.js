@@ -15,19 +15,21 @@ Page({
     //为了区分搜索和显示全页
     url: "http://127.0.0.1:8080/wtlib-web/get/book",
     //为了记录当前list的id
-    recent_id:0
+    recent_id: 0
   },
   onReady: function () {
     var that = this;
     load_data(that)
   },
-  reservate: function () {
+  borrow: function (e) {
+    var index = parseInt(e.currentTarget.dataset.index);
+    var id = this.data.book_list[index].id;
     wx.getStorage({
       key: "userInfo",
       fail: function (res) {
         wechat_confirm();
       },
-      success: function (res){
+      success: function (res) {
         wx.getStorage({
           key: 'key',
           fail: function (res) {
@@ -41,18 +43,17 @@ Page({
               }
             })
           },
-          success: function (data){
+          success: function (data) {
             wx.scanCode({
               onlyFromCamera: true,
               success: (res) => {
                 wx.request({
                   url: 'http://127.0.0.1:8080/wtlib-web/update/borrow',//上线的话必须是https，没有appId的本地请求貌似不受影响 
-                  header: {
-                    'content-type': 'application/x-www-form-urlencoded'
-                  },
                   data: {
-                    "key": data.data, 
-                    "bookHash": res.result },
+                    "key": data.data,
+                    "bookHash": res.result,
+                    bookBaseId: id
+                  },
                   method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT  
                   success: function (res) {
                     wx.hideToast();
@@ -94,11 +95,73 @@ Page({
       }
     });
   },
-  borrow: function () {
-    var status = scan_photo();
-    if (status != false) {
-
-    }
+  reservate: function () {
+    var index = parseInt(e.currentTarget.dataset.index);
+    var id = this.data.book_list[index].id;
+    wx.getStorage({
+      key: "userInfo",
+      fail: function (res) {
+        wechat_confirm();
+      },
+      success: function (res) {
+        wx.getStorage({
+          key: 'key',
+          fail: function (res) {
+            wx.showModal({
+              title: "请求失败",
+              content: "您不是内部人员，没有这个权限,是否登录？",
+              success: function (res) {
+                if (res.confirm) {
+                  wx.navigateTo({ url: "/pages/login/login" });
+                }
+              }
+            })
+          },
+          success: function (data) {
+            wx.showModal({
+              title: "友情提示",
+              content: "是否要预约此书？",
+              success: function (res) {
+                if (res.confirm) {
+                  wx.request({
+                    url: 'http://127.0.0.1:8080/wtlib-web/update/reservation',//上线的话必须是https，没有appId的本地请求貌似不受影响 
+                    data: {
+                      "key": data.data,
+                       bookBaseId: id
+                    },
+                    method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT  
+                    success: function (res) {
+                      wx.hideToast();
+                      if (res.data.code == 10000) {
+                        that.setData({
+                          book_single: res.data.data.book,
+                          book: "disp-block"
+                        });
+                      }
+                      else {
+                        wx.showModal({
+                          title: "请求超时",
+                          content: res.data.msg,
+                          showCancel: false,
+                        })
+                      }
+                    },
+                    fail: function () {
+                      wx.hideToast();
+                      wx.showModal({
+                        title: "请求超时",
+                        content: "服务器故障，正在维修中",
+                        showCancel: false,
+                      })
+                    }
+                  })
+                }
+              }
+            })
+          },
+        })
+      }
+    });
   },
   show: function (e) {
     var index = parseInt(e.currentTarget.dataset.index);
@@ -109,8 +172,8 @@ Page({
       head: "disp-flex",
       info: "disp-block",
       recent_id: id,
-      label_index:0,
-      label_list:[]
+      label_index: 0,
+      label_list: []
     })
     var that = this;
     wx.request({

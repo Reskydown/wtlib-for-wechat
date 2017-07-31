@@ -112,13 +112,9 @@ Page({
                 url: 'http://127.0.0.1:8080/wtlib-web/add/label',//自己的服务接口地址
                 method: 'post',
                 data: {
-                  key: key.data, value: that.data.value, infoId: that.data.advice_list.bookBaseId
+                  key: key.data, value: that.data.value, infoId: that.data.advice_list.bookBaseId, recordId: that.data.advice_list.id
                 },
                 success: function (data) {
-                  var code = data.data.code;
-                  that.setData({
-                    reservation_index: that.data.reservation_index + 1
-                  })
                   if (code == 10000) {
                     wx.showToast({
                       title: data.data.msg,
@@ -214,7 +210,7 @@ Page({
     //在这里面ajax必须是同步的，因为wx.request不支持同步，所以只有把逻辑写在success里面
     wechat_confirm(that);
   },
-  cancel_reservation:function(e){
+   cancel_reservation:function(e){
     var that = this;
     wx.showModal({
       title: "友情提示",
